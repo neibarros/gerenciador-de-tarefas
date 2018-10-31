@@ -1,3 +1,31 @@
-<p>
-	listar-tarefa works!
-</p>
+<div class="row">
+	<div class="col-md">
+		<h1>Tarefas</h1>
+	</div>
+	<div class="col-md">
+		<a class="btn btn-success btn-sm float-right mt-3" href="">Novo</a>
+	</div>
+</div>
+
+<table class="table table-striped table-hover">
+	<tr>
+		<th>Tarefa</th>
+		<th>Concluída</th>
+		<th></th>
+	</tr>
+	<tr>
+		<td></td>
+		<td style="width: 70px">
+			<div class="custom-control custom-checkbox text-center">
+				<input type="checkbox" class="custom-control-input" id="concluida">
+				<label class="custom-control-label" for="concluida">&nbsp;</label>
+			</div>
+		</td>
+		<td class="text-center" style="width: 200px">
+			<a href="#" class="btn btn-sm btn-info mr-2" title="Editar" alt="Editar">Editar</a>
+			<a href="#" class="btn btn-sm btn-danger" title="Remover" alt="Remover">Remover</a>
+		</td>
+	</tr>
+</table>
+
+<p>Nenhuma tarefa cadastrada.</p>
