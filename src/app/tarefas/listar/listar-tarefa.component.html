@@ -13,12 +13,14 @@
 		<th>Concluída</th>
 		<th></th>
 	</tr>
-	<tr>
-		<td></td>
-		<td style="width: 70px">
+	<tr *ngFor="let tarefa of tarefas">
+		<td [class.table-success]="!tarefa.concluida">
+			{{ tarefa.nome }}
+		</td>
+		<td style="width: 70px" class="text-center">
 			<div class="custom-control custom-checkbox text-center">
-				<input type="checkbox" class="custom-control-input" id="concluida">
-				<label class="custom-control-label" for="concluida">&nbsp;</label>
+				<input type="checkbox" class="custom-control-input" id="concluida-{{ tarefa.id }}" [value]="tarefa.id" [checked]="tarefa.concluida">
+				<label class="custom-control-label" for="concluida-{{ tarefa.id }}">&nbsp;</label>
 			</div>
 		</td>
 		<td class="text-center" style="width: 200px">
@@ -28,4 +30,4 @@
 	</tr>
 </table>
 
-<p>Nenhuma tarefa cadastrada.</p>
+<p *ngIf="tarefas.length == 0">Nenhuma tarefa cadastrada.</p>
