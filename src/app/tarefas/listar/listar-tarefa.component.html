@@ -14,12 +14,12 @@
 		<th></th>
 	</tr>
 	<tr *ngFor="let tarefa of tarefas">
-		<td [class.table-success]="!tarefa.concluida">
+		<td [class.table-success]="!tarefa.concluida" [class.text-striked]="tarefa.concluida">
 			{{ tarefa.nome }}
 		</td>
 		<td style="width: 70px" class="text-center">
 			<div class="custom-control custom-checkbox text-center">
-				<input type="checkbox" class="custom-control-input" id="concluida-{{ tarefa.id }}" [value]="tarefa.id" [checked]="tarefa.concluida">
+				<input type="checkbox" class="custom-control-input" id="concluida-{{ tarefa.id }}" [value]="tarefa.id" [checked]="tarefa.concluida" (click)="alterarStatus(tarefa)">
 				<label class="custom-control-label" for="concluida-{{ tarefa.id }}">&nbsp;</label>
 			</div>
 		</td>
