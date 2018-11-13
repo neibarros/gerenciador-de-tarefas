@@ -1,3 +1,25 @@
-<p>
-  editar-tarefa works!
-</p>
+<div class="row">
+	<div class="col-md">
+		<h1>Editar tarefa</h1>
+	</div>
+</div>
+
+<form #formTarefa="ngForm">
+	<div class="form-group">
+		<label for="nome">Tarefa:</label>
+		<input type="text" class="form-control" id="nome" name="nome" [(ngModel)]="tarefa.nome" #nome="ngModel" minlength="5" required>
+		<div *ngIf="nome.errors && (nome.dirty || nome.touched)" class="text-danger">
+			<div [hidden]="!nome.errors.required">
+				Digite a tarefa.
+			</div>
+			<div [hidden]="!nome.errors.minlength">
+				A tarefa deve conter ao menos 5 caracteres.
+			</div>
+		</div>
+	</div>
+
+	<div class="form-group text-center">
+		<button type="submit" class="btn btn-success mr-2" (click)="atualizar()" [disabled]="!formTarefa.form.valid">Editar</button>
+		<a [routerLink]="['/tarefas']" class="btn btn-light">Voltar</a>
+	</div>
+</form>
