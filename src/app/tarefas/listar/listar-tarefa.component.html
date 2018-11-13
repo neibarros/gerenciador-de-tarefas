@@ -25,7 +25,7 @@
 		</td>
 		<td class="text-center" style="width: 200px">
 			<a href="#" class="btn btn-sm btn-info mr-2" [routerLink]="['/tarefas/editar', tarefa.id]" title="Editar" alt="Editar">Editar</a>
-			<a href="#" class="btn btn-sm btn-danger" title="Remover" alt="Remover">Remover</a>
+			<a href="#" class="btn btn-sm btn-danger" (click)="remover($event, tarefa)" title="Remover" alt="Remover">Remover</a>
 		</td>
 	</tr>
 </table>
